@@ -1,6 +1,6 @@
 <?php 
 
-class Core_Model_Author
+class Core_Model_Author implements Zend_Acl_Role_Interface, Zend_Acl_Resource_Interface
 {
     private $authorId;
     private $authorName;
@@ -37,5 +37,21 @@ class Core_Model_Author
         $this->authorName = $authorName;
         return $this;
     }
+	/* (non-PHPdoc)
+	 * @see Zend_Acl_Role_Interface::getRoleId()
+	 */
+	public function getRoleId() {
+		// TODO Auto-generated method stub
+		return 'author';
+	}
+	/* (non-PHPdoc)
+	 * @see Zend_Acl_Resource_Interface::getResourceId()
+	 */
+	public function getResourceId() {
+		// TODO Auto-generated method stub
+		return 'author';
+	}
+
+
 
 }
